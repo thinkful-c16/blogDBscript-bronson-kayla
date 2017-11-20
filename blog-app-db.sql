@@ -10,7 +10,27 @@ CREATE TABLE users (
    first_name TEXT,
    last_name TEXT,
    email_address TEXT NOT NULL,
-   screen_name TEXT NOT NULL,
-   post_id NUMERIC,
-   comment_id NUMERIC
+   screen_name TEXT NOT NULL
 )
+
+CREATE TABLE post (
+   id SERIAL PRIMARY KEY,
+   title TEXT,
+   content TEXT,
+   user_id INT REFERENCES users ON DELETE RESTRICT
+)
+
+CREATE TABLE comment (
+    id SERIAL PRIMARY KEY,
+    post_id INT REFERENCES post ON DELETE RESTRICT NOT NULL,
+    user_id INT REFERENCES users ON DELETE RESTRICT NOT NULL,
+    contents TEXT 
+)
+
+CREATE TABLE tag (
+    id SERIAL PRIMARY KEY,
+    tag TEXT NOT NULL
+)
+
+
+
