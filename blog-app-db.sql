@@ -32,5 +32,25 @@ CREATE TABLE tag (
     tag TEXT NOT NULL
 )
 
+INSERT INTO users
+(first_name, last_name, email_address, screen_name) VALUES 
+('Kayla', 'Webb', 'kaylarwebb@gmail.com', 'kwebb91'),
+('Bronson', 'Akimoto', 'hawaii@hawaii.com', 'bronson1'),
+('John', 'Doe', 'jdoe@john.com', 'jdoe10'),
+('Sally', 'Student', 'sstudent@sally.com', 'sstudent19')
 
+INSERT INTO post
+(title, content, tag, user_id) VALUES 
+('The best blog', 'Current events', 'The best blog post ever'),
+('Blogging', 'Energy', 'Hello world'),
+('Foo bar', 'Foreign affairs', 'Bizz bang'),
+('Fizz buzz', 'mental health', 'Buzz buzz fizz'),
+
+
+INSERT INTO comment
+(post_id, user_id, contents) VALUES
+('worst blog post ever'),
+('i love this post!')
+('interesting perspective')
+('i hate this so much')
 
